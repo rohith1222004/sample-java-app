@@ -41,6 +41,21 @@ public class Calculator {
     }
 
     // Bad: logging sensitive info (simulated)
+    // Bad practice: swallowing exceptions and not handling errors properly
+    public int parseAndDivide(String a, String b) {
+        try {
+            int num1 = Integer.parseInt(a);
+            int num2 = Integer.parseInt(b);
+            return num1 / num2; // possible division by zero
+        } catch (NumberFormatException e) {
+            // Bad: silently catching and returning wrong value
+            return -1;
+        } catch (ArithmeticException e) {
+            // Bad: swallowing divide by zero exception without logging or handling
+            return -1;
+        }
+    }
+
     public void login(String username, String password) {
         System.out.println("Logging in with: " + username + " / " + password);
     }
