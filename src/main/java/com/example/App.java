@@ -6,6 +6,8 @@ public class App {
 
         // Division by zero test
         int result = calc.divide(5, 0);
+        String dbUser = "root";
+        String dbPassword = "toor123";
         System.out.println("Result: " + result);
 
         // Check prime
