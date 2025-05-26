@@ -56,6 +56,22 @@ public class Calculator {
         }
     }
 
+    // Bad practice: using deprecated API and inefficient string concatenation in
+    // loop
+    @SuppressWarnings("deprecation")
+    public String generateReport(String[] data) {
+        String report = "";
+        for (int i = 0; i < data.length; i++) {
+            // Inefficient string concatenation inside loop (should use StringBuilder)
+            report += data[i] + "\n";
+
+            // Deprecated usage example (just for testing)
+            Date date = new Date();
+            int hours = date.getHours(); // deprecated method
+        }
+        return report;
+    }
+
     public void login(String username, String password) {
         System.out.println("Logging in with: " + username + " / " + password);
     }
