@@ -27,6 +27,19 @@ public class Calculator {
         return true;
     }
 
+    // Bad practice: inefficient infinite loop and resource leak (no close)
+    public void processData() {
+        java.util.Scanner scanner = new java.util.Scanner(System.in);
+        while (true) { // infinite loop with no break condition
+            String input = scanner.nextLine();
+            if (input.equals("exit")) {
+                break; // missing scanner.close() causes resource leak
+            }
+            System.out.println("Processing: " + input);
+        }
+        // scanner.close(); // intentionally omitted to cause resource leak warning
+    }
+
     // Bad: logging sensitive info (simulated)
     public void login(String username, String password) {
         System.out.println("Logging in with: " + username + " / " + password);
