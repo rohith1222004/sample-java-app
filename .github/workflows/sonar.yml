@@ -1,0 +1,27 @@
+name: SonarQube
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  sonar:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: SonarQube Scan
+        run: |
+          ./gradlew sonarqube \
+          -Dsonar.host.url=http://YOUR_EC2_IP:9000 \
+          -Dsonar.login=sqa_219bee32d525a4e3fbaf2f5a84128f02af30f477\
+          -Dsonar.qualitygate.wait=true
