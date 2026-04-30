@@ -21,6 +21,6 @@ jobs:
 
       - name: SonarQube Scan
         run: mvn clean verify sonar:sonar \
-          -Dsonar.host.url=http://YOUR_EC2_IP:9000 \
+          -Dsonar.host.url=http://54.242.6.136:9000 \
           -Dsonar.login=sqa_219bee32d525a4e3fbaf2f5a84128f02af30f477\
           -Dsonar.qualitygate.wait=true
