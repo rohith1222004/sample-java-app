@@ -5,5 +5,7 @@ public class App {
         Calculator calc = new Calculator();
         int result = calc.add(5, 3);
         System.out.println("Result: " + result);
+        String s = null;
+        System.out.println(s.length());
     }
 }
