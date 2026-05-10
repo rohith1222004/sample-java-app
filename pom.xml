@@ -4,6 +4,7 @@
          http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
+
     <groupId>com.example</groupId>
     <artifactId>codeguru-sample-java</artifactId>
     <version>1.0-SNAPSHOT</version>
@@ -15,9 +16,13 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
-    <dependency>
-             <groupId>org.apache.logging.log4j</groupId>
-             <artifactId>log4j-core</artifactId>
-             <version>2.14.1</version>
-    </dependency>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>2.14.1</version>
+        </dependency>
+    </dependencies>
+
 </project>
