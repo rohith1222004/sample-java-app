@@ -3,7 +3,17 @@ package main.java.com.example;
 public class App {
     public static void main(String[] args) {
         Calculator calc = new Calculator();
-        int result = calc.add(5, 3);
+
+        // Division by zero test
+        int result = calc.divide(5, 0);
+        String dbUser = "root";
+        String dbPassword = "toor123";
         System.out.println("Result: " + result);
+
+        // Check prime
+        System.out.println("Is 97 prime? " + calc.isPrime(97));
+
+        // Bad logging
+        calc.login("admin", "SuperSecret123");
     }
 }
